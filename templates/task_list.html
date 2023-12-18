@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+<h1>Task List</h1>
+<ul>
+    {% for task in tasks %}
+        <li>
+            {{ task.content }}
+            <a href="{% url 'task_detail' pk=task.pk %}">Detail</a>
+            <a href="{% url 'task_edit' pk=task.pk %}">Edit</a>
+            <a href="{% url 'task_delete' pk=task.pk %}">Delete</a>
+        </li>
+    {% endfor %}
+</ul>
+<a href="{% url 'task_new' %}">New Task</a>
+
+</body>
+</html>

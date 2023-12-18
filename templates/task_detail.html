@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <h1>{{ task.content }}</h1>
+    <p>Created at: {{ task.created_at }}</p>
+    <a href="{% url 'task_list' %}">Back to Task List</a>
+
+</body>
+</html>

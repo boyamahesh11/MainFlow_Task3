@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <h1>{% if task %}Edit Task{% else %}New Task{% endif %}</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="content">Content:</label>
+        <input type="text" id="content" name="content" value="{% if task %}{{ task.content }}{% endif %}" required>
+        <button type="submit">Save Task</button>
+    </form>
+    <a href="{% url 'task_list' %}">Cancel</a>
+</body>
+</html>
